@@ -17,7 +17,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "com/cydeo/step_definitions",
         dryRun = false,
-        tags = "",
+        tags = "@ATMAN",
         publish = true // this generates a report with a public link
         //  monochrome = true
 
