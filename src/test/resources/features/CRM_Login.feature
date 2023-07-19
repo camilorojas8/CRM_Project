@@ -1,6 +1,6 @@
+@login
 Feature: Login Page Functionality
   Agile story: As a user, I should be able to login
-
   Background:
     Given User should navigate to the webPage
 

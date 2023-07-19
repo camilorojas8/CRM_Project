@@ -31,11 +31,11 @@ public class LoginPage {
 
 
 
-    public void login(String userName, String userPassword){
-        this.userName.sendKeys(userName);
-        this.userPassword.sendKeys(userPassword);
-        this.loginButton.click();
-    }
+//    public void login(String userName, String userPassword){
+//        this.userName.sendKeys(userName);
+//        this.userPassword.sendKeys(userPassword);
+//        this.loginButton.click();
+//    }
 
 
 }
