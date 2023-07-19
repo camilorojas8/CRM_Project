@@ -18,8 +18,8 @@ for ALL the SCENARIOS and even STEPS.
  */
 public class Hooks {
 
-    @Before (order = 1)
-    public void setupMethod(){
+    @Before(order = 1)
+    public void setupMethod() {
 
         Driver.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
@@ -49,7 +49,7 @@ public class Hooks {
         System.out.println("---> @After: RUNNING AFTER EACH SCENARIO");
 
         BrowserUtils.sleep(2);
-       Driver.closeDriver();
+        Driver.closeDriver();
 
     }
 
