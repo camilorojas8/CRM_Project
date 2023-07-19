@@ -17,7 +17,7 @@ public class ActivityStreamPage {
     public WebElement pollButton;
 
     @FindBy(xpath = "//body[@contenteditable='true']")
-    public WebElement messageTitlePoll;
+    public WebElement messageTitlePollInputBox;
 
     @FindBy(xpath = "//div[@id='feed-add-post-destination-container']")
     public WebElement deliveryInputBox;
