@@ -19,6 +19,15 @@ public class LoginPage {
     @FindBy(xpath="//input[@class='login-btn']")
     public WebElement loginButton;
 
+    @FindBy (xpath = "//span[.='Send message …']")
+    public WebElement messageField;
+
+    @FindBy(xpath = "//a[@title='Mail']")
+    public WebElement mailtab;
+
+    @FindBy(xpath = "//body[@style='min-height: 184px;']")
+    public WebElement bodyField;
+
 
     public void Hr_login(){
         this.userName.sendKeys(ConfigurationReader.getProperty("username_hr1"));

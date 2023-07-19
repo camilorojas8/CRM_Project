@@ -48,10 +48,28 @@ public class LoginPageStepsDefinition {
 
     @Then("user should be on the activity stream")
     public void userShouldBeOnTheHomePage() {
+
         BrowserUtils.verifyTitleContains("Portal");
     }
 
 
+    @Given("User should navigate to the homepage")
+    public void userShouldNavigateToTheHomepage() {
+
+    }
+
+    @And("User able to go to mailBox page")
+    public void userclickOnMailtab() {
+        loginPage.helpDesk_login();
+        loginPage.mailtab.click();
+
+    }
+
+
+    @Then("user land into the Mailbox page")
+    public void userLandIntoTheMailboxPage() {
+        BrowserUtils.verifyTitleContains("Mailbox");
+    }
 }
 
 
