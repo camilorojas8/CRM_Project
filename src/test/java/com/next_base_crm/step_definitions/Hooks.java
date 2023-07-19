@@ -49,7 +49,7 @@ public class Hooks {
         System.out.println("---> @After: RUNNING AFTER EACH SCENARIO");
 
         BrowserUtils.sleep(2);
-        Driver.closeDriver();
+       Driver.closeDriver();
 
     }
 

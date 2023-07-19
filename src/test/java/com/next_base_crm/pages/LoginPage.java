@@ -1,65 +1,41 @@
-package com.next_base_crm.pages;
+package com.next_base_crm.runners;
 
-import com.next_base_crm.utilities.ConfigurationReader;
 import com.next_base_crm.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import static java.awt.SystemColor.window;
-
 public class LoginPage {
-
-    public void LoginPage(){
-        PageFactory.initElements(Driver.getDriver(),this);
+    public LoginPage(){
+        PageFactory.initElements(Driver.getDriver(), this);
     }
 
-  /*  @FindBy(xpath = "//input[@name='USER_LOGIN']")
-    public WebElement usernameBox;
 
-    @FindBy(name = "USER_PASSWORD" )
-    public WebElement passwordBox;
+    // Login Verificatin
+    @FindBy(name = "USER_LOGIN")
+    public WebElement userName;
 
-    @FindBy(name = "USER_REMEMBER")
-    public WebElement rememberBox;
+    @FindBy(xpath="//input[@name='USER_PASSWORD']")
+    public WebElement userPassword;
 
-    @FindBy(xpath = "//input[@type='submit']")
-    public WebElement logInButton;
+    @FindBy(xpath="//input[@class='login-btn']")
+    public WebElement loginButton;
 
-    public void login(String username, String password){
 
-       usernameBox.sendKeys(username);
-       passwordBox.sendKeys(password);
-       logInButton.click();
 
+
+    // Dashboard verification
+    @FindBy(xpath="//span[@id='user-name']")
+    public WebElement userDropdown;
+
+
+
+
+    public void login(String userName, String userPassword){
+        this.userName.sendKeys(userName);
+        this.userPassword.sendKeys(userPassword);
+        this.loginButton.click();
     }
-    public void loginDynamic(String userType) {
-        userType=userType.replace(" ","_");
-        String username= ConfigurationReader.getProperty("username_" + userType);
-        String password=ConfigurationReader.getProperty("password" + userType );
-
-        login(username,password);
-    }*/
 
 
-
-       // Login Verificatin
-       @FindBy(name = "USER_LOGIN")
-       public WebElement userName;
-
-       @FindBy(xpath="//input[@name='USER_PASSWORD']")
-       public WebElement userPassword;
-
-       @FindBy(xpath="//input[@class='login-btn']")
-       public WebElement loginButton;
-
-
-
-
-
-
-   }
-
-
-
-
+}

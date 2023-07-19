@@ -1,51 +1,33 @@
-@CRM_login
-Feature:Users should be able to login
-  User Story:
-  As a user, I should be able to login with correct credentials to different accounts. And dashboard should be displayed.
-  Accounts are: driver, sales manager, store manager
+Feature: Login Page Functionality
+  Agile story: As a user, I should be able to login
 
   Background:
-    Given user is on the login page
-
-@Hr_user
-  Scenario: Login as Hr user
-   # Given user is on the login page
-    When user enters the <"username">
-    And user enters the <"password">
-    Then user should be able to login
+    Given User should navigate to the webPage
 
 
-  @help_
-  Scenario: Login as sales manager
-   # Given user is on the login page
-    When user enters the sales manager information
-    Then user should be able to login
-
-  @wip
-  Scenario: Login as store manager
-   # Given user is on the login page
-    When user enters the store manager information
-    Then user should be able to login
+  @Hr_Login
+  Scenario:  Login page function
+    Then Hr user should enter "username"
+    And user should enter the "password"
+    And user should click for login button
 
 
-  @smoke2
-  Scenario: Login with given user
-   # Given user is on the login page
-    When user enters the "store manager" information
-    Then user should be able to login
+  @HelpDesk_Login
+  Scenario: Login page function
+    Then Helpdesk user should enter "username"
+    And user should enter the "password"
+    And user should click for login button
 
 
-  @invalidLoginWithParamsSceOutLine
-  Scenario Outline: Login with invalid credential
-    Given user is on the login page
-    When the user login with "<username>","<password>"
-    Then the user should not be able to log in
+  @marketing_Login
+  Scenario:  Login page function
+    Then Marketing user should enter "username"
+    And user should enter the "password"
+    And user should click for login button
 
-    Examples:
-      | username        | password      |
-      | wrongUserName   | UserUser123   |
-      | salesmanager101 | wrongPassword |
-      | wrongUserName   | wrongPassword |
-      | wrongUserName   | empty         |
-      | empty           | wrongPassword |
-      | empty           | empty         |
+
+
+
+
+
+
