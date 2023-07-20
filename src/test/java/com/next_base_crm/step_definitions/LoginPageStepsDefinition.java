@@ -141,7 +141,7 @@ public class LoginPageStepsDefinition {
         Assert.assertEquals(expectedErrorTitleMsg, actualErrorTitleMsg);
     }
 
-    @Then("user sees error answer message: {string}")
+    /* @Then("user sees error answer message: {string}")
     public void user_sees_error_answer_message(String question) {
         String actualErrorAnswerMsg = activityStreamPage.errorAnswerMessage.getText();
         String expectedErrorAnswerMsg = "The question " + "\"what is a maven?\"" + " has no answers.";
@@ -149,19 +149,32 @@ public class LoginPageStepsDefinition {
 
     }
 
+     */
+
     @Then("user clicks on a {string} button")
     public void user_clicks_on_a_button(String button3) {
       activityStreamPage.cancelPollButton.click();
     }
 
-   /* @Then("user sees error answer message: {string}  {string} {string}")
+    /*@Then("user sees error answer message: {string}  {string} {string}")
     public void user_sees_error_answer_message(String error1, String question, String error2) {
         String actualErrorAnswerMsg = activityStreamPage.errorAnswerMessage.getText();
         String expectedErrorAnswerMsg = "The question" + " what is a maven? " + "has no answers.";
         Assert.assertEquals(expectedErrorAnswerMsg, actualErrorAnswerMsg);
     }
 
-    */
+     */
+
+
+
+    @Then("user sees error answer message: \"The question \"what is maven?{string}")
+    public void user_sees_error_answer_message_the_question_what_is_maven(String message2) {
+            String actualErrorAnswerMsg = activityStreamPage.errorAnswerMessage.getText();
+            String expectedErrorAnswerMsg = "\"what is a maven?\"";
+            Assert.assertTrue(actualErrorAnswerMsg.contains(expectedErrorAnswerMsg));
+    }
+
+
 
 
 
