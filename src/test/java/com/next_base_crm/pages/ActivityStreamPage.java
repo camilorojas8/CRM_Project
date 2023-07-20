@@ -13,7 +13,7 @@ public class ActivityStreamPage {
     @FindBy(xpath = "//title[contains(text(),'Portal')]")
     public WebElement activityStreamTitle;
 
-    @FindBy(xpath = "(//span[.='Poll'])[2]")
+    @FindBy(xpath = "//span[@id='feed-add-post-form-tab-vote']")
     public WebElement pollButton;
 
     @FindBy(xpath = "//body[@contenteditable='true']")
@@ -49,13 +49,17 @@ public class ActivityStreamPage {
     @FindBy(xpath = "//span[.='The message title is not specified']")
     public WebElement errorMessageTitleMessage;
 
-    @FindBy(xpath = "//span[.='The message title is not specified']")
+    @FindBy(xpath = "//span[.='Please specify at least one person.']")
     public WebElement errorDeliveryPersonMessage;
 
     @FindBy(xpath = "//span[.='The question text is not specified.']")
     public WebElement errorQuestionTextMessage;
 
-    @FindBy(xpath = "//span[.='The question \"what is Maven?\" has no answers.']")
+    @FindBy(xpath = "//span[@class='feed-add-info-text']")
+   // @FindBy(xpath = "//span[.='The question \"what is maven?\" has no answers.']")
     public WebElement errorAnswerMessage;
+
+    @FindBy(xpath = "//button[@id='blog-submit-button-cancel']")
+    public WebElement cancelPollButton;
 
 }
