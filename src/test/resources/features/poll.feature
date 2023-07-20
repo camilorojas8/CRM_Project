@@ -28,8 +28,8 @@ Background:
 	@B29G34-312
 	Scenario: Verify user should see mandatory fields: recipient - Error message: "Please specify at least one person."
 		    Then user removes "All employees" default delivery option
-		    Then user types "message" in message title input box
-		    Then user adds "question" in Question input box
+		    Then user types "title message" in message title input box
+		    Then user adds "what is maven?" in Question input box
 		    Then user adds "answers" in Answer input box
 		    And user clicks on "Send" button
 		    Then user sees error delivery message: 'Please specify at least one person.'
@@ -38,8 +38,8 @@ Background:
 	
 	@B29G34-313
 	Scenario: Verify user should see mandatory fields: 1 question-  Error message: "The question text is not specified."
-		   Then user types "message" in message title input box
-		   Then user adds "answers" in Answer input box
+		   Then user types "title message" in message title input box
+		   Then user adds "what is maven?" in Answer input box
 		   And user clicks on "Send" button
 		   Then user sees error question message: 'The question text is not specified.'
 		   And user clicks on a "cancel" button
@@ -47,16 +47,16 @@ Background:
 	
 	@B29G34-309
 	Scenario: Verify user should see mandatory fields: 1 answer - Error message: "The question "........." has no answers."
-		   Then user types "message" in message title input box
-		   Then user adds "question" in Question input box
+		   Then user types "title message" in message title input box
+		   Then user adds "what is maven?" in Question input box
 		   And user clicks on "Send" button
-		   Then user sees error answer message: "The question ......... has no answers."
+		   Then user sees error answer message: "The question "what is maven?" has no answers."
 		   And user clicks on a "cancel" button
 
 	@B29G34-314
 	Scenario: Verify user should be able to create a poll by adding questions and multiple answers.
-		Then user types "message" in message title input box
-		Then user adds "question" in Question input box
+		Then user types "title message" in message title input box
+		Then user adds "what is the maven?" in Question input box
 		Then user adds "answers" in Answer input box
 		And user clicks on "Send" button
 
