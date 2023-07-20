@@ -10,20 +10,12 @@ public class ActivityStreamPage {
     public ActivityStreamPage(){
         PageFactory.initElements(Driver.getDriver(), this);
     }
-    @FindBy(xpath = "//title[contains(text(),'Portal')]")
-    public WebElement activityStreamTitle;
 
     @FindBy(xpath = "//span[@id='feed-add-post-form-tab-vote']")
     public WebElement pollButton;
 
     @FindBy(xpath = "//body[@contenteditable='true']")
     public WebElement messageTitlePollInputBox;
-
-    @FindBy(xpath = "//div[@id='feed-add-post-destination-container']")
-    public WebElement deliveryInputBox;
-
-    @FindBy(xpath = "(//span[.='Poll'])[2]")
-    public WebElement pollModule;
 
     @FindBy(xpath = "(//span[.='All employees'])[3]")
     public WebElement allEmployeeOption;
