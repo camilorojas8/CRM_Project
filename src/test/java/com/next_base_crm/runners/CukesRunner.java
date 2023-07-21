@@ -16,8 +16,9 @@ import org.junit.runner.RunWith;
         },
         features = "src/test/resources/features",
         glue = "com/next_base_crm/step_definitions",
-        dryRun = false,
-        tags = "@B29G34-319",
+        dryRun = false, 
+        tags = "",
+
         publish = true // this generates a report with a public link
         //  monochrome = true
 
