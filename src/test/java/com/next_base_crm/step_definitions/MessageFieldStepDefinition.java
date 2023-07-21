@@ -91,7 +91,7 @@ public class MessageFieldStepDefinition {
     @Then("the message should not be sent and 'Send message ...' text is visible again")
     public void the_message_should_not_be_sent() {
 
-        messagePage.defaultMessageText.getText().equals("Send message …");
+        messagePage.defaultMessageText.isDisplayed();
 
         //text
 
