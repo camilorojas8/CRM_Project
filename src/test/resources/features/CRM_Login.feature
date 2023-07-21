@@ -19,6 +19,45 @@ Feature: Login Page Functionality
 
 
 
+  @B29G34-302 @test1
+  Scenario: username_help_desk
+
+
+    And help desk User click on message button
+    And User  click on the link user to navigate to the correct URL.
+    And User enter the links
+    And user click on save button
+    And user click on send button
+    And user open the link in a new tab
+    Then  user verify new tab
+
+
+  @B29G34-303 @test1
+  Scenario: username_hr1 user login
+
+
+    And  hr User click on message button
+    And  User  click on the link user to navigate to the correct URL.
+    And  User enter the links
+    And  user click on save button
+    And  user click on send button
+    And  user open the link in a new tab
+    Then user verify new tab
+
+
+  @B29G34-304 @test1
+  Scenario: username_marketing
+
+
+    And marketing User click on message button
+    And User  click on the link user to navigate to the correct URL.
+    And User enter the links
+    And user click on save button
+    And user click on send button
+    And user open the link in a new tab
+    Then user verify new tab
+
+
 
 
 

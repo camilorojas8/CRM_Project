@@ -17,7 +17,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "com/next_base_crm/step_definitions",
         dryRun = false,
-        tags = "@User_Login",
+        tags = "@test1",
         publish = true // this generates a report with a public link
         //  monochrome = true
 
