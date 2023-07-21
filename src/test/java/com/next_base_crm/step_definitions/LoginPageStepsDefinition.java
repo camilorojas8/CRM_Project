@@ -1,5 +1,6 @@
 package com.next_base_crm.step_definitions;
 
+import com.next_base_crm.pages.ActivityStreamPage;
 import com.next_base_crm.pages.LoginPage;
 import com.next_base_crm.utilities.BrowserUtils;
 import com.next_base_crm.utilities.ConfigurationReader;
@@ -8,9 +9,15 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
+import org.openqa.selenium.WebElement;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class LoginPageStepsDefinition {
     LoginPage loginPage = new LoginPage();
+    ActivityStreamPage activityStreamPage = new ActivityStreamPage();
 
     @Given("User should navigate to the webPage")
     public void userShouldNavigateToTheWebPage() {
@@ -40,6 +47,7 @@ public class LoginPageStepsDefinition {
         loginPage.userName.sendKeys(username);
 
     }
+
     @And("user should click for login button")
     public void userShouldClickForLoginButton() {
         loginPage.loginButton.click();
@@ -53,5 +61,7 @@ public class LoginPageStepsDefinition {
 
 
 }
+
+
 
 
