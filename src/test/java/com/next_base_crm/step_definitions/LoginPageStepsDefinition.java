@@ -1,6 +1,7 @@
 package com.next_base_crm.step_definitions;
 
 import com.next_base_crm.pages.ActivityStreamPage;
+import com.next_base_crm.pages.EmployeesPage;
 import com.next_base_crm.pages.LoginPage;
 import com.next_base_crm.utilities.BrowserUtils;
 import com.next_base_crm.utilities.ConfigurationReader;
@@ -12,9 +13,16 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.junit.Assert;
+import org.openqa.selenium.WebElement;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class LoginPageStepsDefinition {
     LoginPage loginPage = new LoginPage();
+
+    EmployeesPage employeesPage = new EmployeesPage();
 
     @Given("User should navigate to the webPage")
     public void userShouldNavigateToTheWebPage() {
@@ -44,6 +52,7 @@ public class LoginPageStepsDefinition {
         loginPage.userName.sendKeys(username);
 
     }
+
     @And("user should click for login button")
     public void userShouldClickForLoginButton() {
         loginPage.loginButton.click();
@@ -52,7 +61,6 @@ public class LoginPageStepsDefinition {
 
     @Then("user should be on the activity stream")
     public void userShouldBeOnTheHomePage() {
-
         BrowserUtils.verifyTitleContains("Portal");
 
     }
@@ -71,7 +79,7 @@ public class LoginPageStepsDefinition {
 
     @When("user clicks on the {string} button")
     public void user_clicks_on_the_button(String button1) {
-      activityStreamPage.pollButton.click();
+        activityStreamPage.pollButton.click();
     }
 
     @Then("user sees the delivery {string} by default")
@@ -91,6 +99,7 @@ public class LoginPageStepsDefinition {
         activityStreamPage.sendButton.click();
 
     }
+
     @Then("user removes {string} default delivery option")
     public void user_removes_default_delivery_option(String removingButton) {
         activityStreamPage.removeAllEmployeeButton.click();
@@ -100,8 +109,9 @@ public class LoginPageStepsDefinition {
     @Then("user adds {string} in Question input box")
     public void user_adds_in_question_input_box(String question) {
         Driver.getDriver().switchTo().parentFrame();
-       activityStreamPage.questionInputBox.sendKeys("what is a maven?");
+        activityStreamPage.questionInputBox.sendKeys("what is a maven?");
     }
+
     @Then("user adds {string} in Answer input box")
     public void user_adds_in_answer_input_box(String answer) {
         Driver.getDriver().switchTo().parentFrame();
@@ -110,12 +120,11 @@ public class LoginPageStepsDefinition {
     }
 
 
-
     @Then("user sees error delivery message: {string}")
     public void user_sees_error_delivery_message(String message1) {
         String expectedErrorDeliveryMessage = "Please specify at least one person.";
         String actualErrorDeliveryMessage = activityStreamPage.errorDeliveryPersonMessage.getText();
-        Assert.assertEquals(expectedErrorDeliveryMessage,actualErrorDeliveryMessage);
+        Assert.assertEquals(expectedErrorDeliveryMessage, actualErrorDeliveryMessage);
     }
 
 
@@ -125,7 +134,6 @@ public class LoginPageStepsDefinition {
         String expectedErrorMessage = "The question text is not specified.";
         Assert.assertEquals(expectedErrorMessage, actualErrorMessage);
     }
-
 
 
     @Then("user clicks on {string} checkbox")
@@ -153,8 +161,9 @@ public class LoginPageStepsDefinition {
 
     @Then("user clicks on a {string} button")
     public void user_clicks_on_a_button(String button3) {
-      activityStreamPage.cancelPollButton.click();
+        activityStreamPage.cancelPollButton.click();
     }
+
 
     /*@Then("user sees error answer message: {string}  {string} {string}")
     public void user_sees_error_answer_message(String error1, String question, String error2) {
@@ -164,6 +173,43 @@ public class LoginPageStepsDefinition {
     }
 
      */
+
+    @Given("the user is on the Activity Stream page")
+    public void the_user_is_on_the_activity_stream_page() {
+        Driver.getDriver().get(ConfigurationReader.getProperty("env"));
+        loginPage.Hr_login();
+
+        BrowserUtils.verifyTitleContains("Portal");
+    }
+
+
+    @When("the user clicks on the Employees module")
+    public void the_user_clicks_on_the_employees_module() {
+
+        employeesPage.employeesButton.click();
+
+    }
+    @Then("the Company Structure tab is open by default")
+    public void the_company_structure_tab_is_open_by_default() {
+
+        BrowserUtils.verifyTitleContains("Company Structure");
+
+    }
+    @Then("the user should see the following modules:")
+    public void the_user_should_see_the_following_modules(List<String> expectedModules) {
+
+        List<String> actualModules = new ArrayList<>();
+
+        for (WebElement eachModule : employeesPage.allTopModules) {
+
+            actualModules.add(eachModule.getText());
+            System.out.println(eachModule.getText());
+        }
+
+        Assert.assertEquals(expectedModules,actualModules);
+
+    }
+
 
 
 
