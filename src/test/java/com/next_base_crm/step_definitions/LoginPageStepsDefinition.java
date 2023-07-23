@@ -1,6 +1,7 @@
 package com.next_base_crm.step_definitions;
 
 import com.next_base_crm.pages.ActivityStreamPage;
+import com.next_base_crm.pages.EmployeesPage;
 import com.next_base_crm.pages.LoginPage;
 import com.next_base_crm.utilities.BrowserUtils;
 import com.next_base_crm.utilities.ConfigurationReader;
