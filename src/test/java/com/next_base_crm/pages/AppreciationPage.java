@@ -25,9 +25,12 @@ public class AppreciationPage {
     @FindBy(xpath="//a[text()='Add employee'][1]")
     public WebElement recipient;
 
-    @FindBy(xpath="//div[text()='Thank you for your freat work!']")
+    @FindBy(xpath="//div[text()='Thank you for your great work!']")
     public WebElement activityStreamMessage;
 
     @FindBy(xpath = "//body[@contenteditable='true']")
     public WebElement message;
+
+    @FindBy(xpath= "//span[text()='The message title is not specified']")
+    public WebElement errorMessage;
 }
